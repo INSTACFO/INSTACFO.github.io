@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Insta CFO</title>
+    <link rel="stylesheet" href="instacfo.css">
+  </head>
+  <style>
+.body{  
+  font-family:Sans-serif, Arial;     
+  padding:0;
+  margin:0;
+  background-color:#fff;
+  font-size:16px;
+}
+/* ===========================
+    General Styles 
+============================ */
+.content{
+  width:84%;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  padding-top:40px;       
+  padding-bottom:50px;
+}
+.content__title{
+  text-transform:capitalize;
+  font:bold 32px 'Lora', serif; 
+  font-style:italic;
+  color:#333;
+  text-align:left;
+  margin-top:0;
+  margin-bottom:0;
+  width:100%;
+}
+.hr{
+  width:60px;
+  height:2px;
+  background-color:#f6052a;
+  border:0;
+  margin-bottom:50px; 
+  margin-left:0;
+}
+/* ===========================
+    Navigation
+============================ */
+.container-1{
+  padding:0 120px;
+  min-height:500px;
+}
+.container-1:after{
+  content:'Fresh!';
+  position:absolute;
+  top:800px;
+  bottom:0;
+  right:0;
+  font-size:13vw;   
+  z-indez:-2;
+  font-weight:900;
+  color:#000;
+  opacity:0.7;
+  height:400px;
+}
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:30px 0;
+  height:15px;
+}
+#check{
+  display:none;
+}
+.check-btn{
+  position:absolute;
+  height:100px;
+  width:24px;
+  right:40px;
+  top:70px;
+  margin-top:-64px;
+  display:none;
+}
+
+.check-item{
+  position:relative;
+  border-radius:3px;
+  background-color:#f8982b;
+  margin-top:8px;
+  -webkit-transition:all 0.3s ease-in-out;
+  transition:all 0.3s ease-in-out;
+  height:3.5px;
+  width:24px;
+  background:#f6052a;
+}
+
+.navbar__brand{
+  font-weight:700;
+  text-transform:uppercase;
+  text-decoration:none;
+  font-size:30px;
+}
+.navbar__brand-link{
+  color:#f6052a; 
+  text-decoration:none;
+}
+.nav-wrapper{
+  position:relative;
+  display:flex;
+  height:40px;
+}
+.nav-wrapper__item{
+  list-style:none;
+  margin:0;
+}
+.nav-wrapper__link{
+  position:relative;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:40;
+  padding:4px 15px;
+  color:#333;
+  text-decoration:none;
+  margin:0 80px;
+}
+.nav-wrapper__link:hover{
+  color:#f6052a;   
+}
+/* ===========================
+    Masthead 
+============================ */
+.masthead{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:0px;
+}
+.masthead-text{
+  position:relative;
+  max-width:500px;
+  margin-right:10px;
+}
+.masthead__title{
+  font-size:54px;
+  text-transform:uppercase;
+  font-weight:800;
+  line-height:65px;
+  color:#333;
+}
+.masthead__title-color{
+  color:#f6052a; 
+}
+.masthead__paragraph{
+  font-size:18px;
+  color:#333;
+  line-height:32px;
+  margin:20px 0;
+}
+.masthead__link{
+  display:inline-block;
+  color:#333;
+  cursor:pointer;
+  position:relative;
+  transition:all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  border:2px solid #f6052a;
+}
+.masthead__link:hover{
+  text-shadow:nthree;
+}
+.masthead__link:hover:before{
+  left:0%;
+  right:auto;
+  width:100%;
+}
+.masthead__link:before{
+  position:absolute;
+  top:0px;
+  right:0px;
+  height:100%;
+  width:0px;
+  z-index:-1;
+  content:'';
+  background:#f6052a; 
+  transition:all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.masthead__link:link{
+  position:relative;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#333;
+  letter-spacing:1px;
+  font-size:18px;
+  text-decoration:none;
+  padding:15px;
+  text-align:center;
+  text-shadow:0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition:all 1s ease;
+  -moz-transition:all 1s ease;
+  -o-transition:all 1s ease;
+  transition:all 1s ease;
+}
+.masthead__link:visited{
+  position:relative;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#333;
+  letter-spacing:1px;
+  font-size:18px;
+  text-decoration:none;
+  padding:15px;
+  text-align:center;
+  text-shadow:0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition:all 1s ease;
+  -moz-transition:all 1s ease;
+  -o-transition:all 1s ease;
+  transition:all 1s ease;
+}
+.masthead__link:visited:after{
+  content:"";
+  position:absolute;
+  height:0%;
+  left:50%;
+  top:50%;
+  width:150%;
+  z-index:-1;
+  -webkit-transition:all 0.75s ease 0s;
+  -moz-transition:all 0.75s ease 0s; 
+  -o-transition:all 0.75s ease 0s;
+  transition:all 0.75s ease 0s;
+}
+.masthead__link:visited:after{
+  content:"";
+  position:absolute;
+  height:0%;
+  left:50%;
+  top:50%;
+  width:150%;
+  z-index:-1;
+  -webkit-transition:all 0.75s ease 0s;
+  -moz-transition:all 0.75s ease 0s; 
+  -o-transition:all 0.75s ease 0s;
+  transition:all 0.75s ease 0s;
+}
+.masthead__link:link:hover{
+  color:#fff;
+  text-shadow:none;
+}
+.masthead__link:visited:hover{
+  color:#fff;
+  text-shadow:none;
+}
+.masthead-img-1a{
+  position:relative;
+  width:600px;
+  height:600px;
+  filter:drop-shadow(0 10px 6px #020202); 
+}
+.container__img-1a{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.masthead-img-1b{
+  filter:drop-shadow(0 10px 6px #020202); 
+  width:430px;
+  height:430px;
+  margin:0 auto;
+  margin-bottom:0px;
+  margin-top:25px;
+  text-align:center;
+  display:none;
+}
+
+.container__img-1b{
+   width:100%;
+   height:100%;
+}
+/* ===========================
+    About
+============================ */
+.container-2{
+  width:84%; 
+  margin:auto;
+  display:flex;
+  overflow:hidden;
+  align-items:center;
+  padding:0;
+}
+.col-left-1{
+  float:left;
+  width:50%;
+  margin-left:0;
+  height:435px;
+}
+.about__title{
+  margin-bottom:15px;
+  color:#333;
+  font-weight:700; 
+  font:bold 25px 'Lora', serif;
+  margin-top:0px;
+}
+.about__paragraph{
+  width:100%;
+  margin-top:32px;
+  font:Sans-serif, Arial;     
+  font-style:italic;
+  font-size:18px;
+  color:#333;
+  line-height:28px;
+  margin-bottom:0px;
+}
+
+.col-right-1{
+  color:#000;      
+  width:50%;             
+  padding:0;
+  text-align:right;
+  height:435px;
+  margin-top:20px;
+}
+
+.container__img-2{
+  width:430px;
+  height:430px;
+  box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.13);
+  margin-right:3px;
+}
+/* ===========================
+    Menu
+============================ */
+.col-menu-1{
+  color:#000;      
+  width:100%;             
+  padding:0;
+  margin-top:20px;
+  text-align:center;
+  height:400px;
+}
+.container__img-3{  
+  width:346px;
+  height:346px;
+  box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.13);
+  margin-right:3px;
+  transition:1s;
+  -webkit-transition:0.5s;
+  cursor:pointer;
+  flex:1 1 auto;
+}
+.container__img-3:hover{
+  transform:scale(1.05);
+  box-shadow:0 25px 25px -20px  rgba(0,0,0,0.3);
+}
+.masthead__btn--menu{
+  margin-top:20px;
+  display:block;
+  text-align:center;
+} 
+/* ===========================
+    How it works
+============================ */
+.col-menu-1{
+  color:#000;      
+  width:100%;             
+  padding:0;
+  margin-top:20px;
+  text-align:center;
+  height:435px;
+}
+/* ===========================
+    Contact
+============================ */
+.newsletter{
+  padding-bottom:100px;
+}
+.subscribe{
+  position:relative;
+  height:500px;
+  overflow:hidden;
+  box-shadow:0px 0px 30px 20px rgba(0, 0, 0, 0.12);
+  width:84%; 
+  margin:auto;
+  overflow:hidden;
+  margin-top:20px;
+}
+.subscribe__h3{
+  margin:50px 0;
+  width:365.5px;
+  text-align:center;
+  font-weight:normal;
+  color:#ff6b81;
+}
+.about__title--subscribe{
+  color:#95a3b3;  
+  margin-top:100px;
+  margin-bottom:125px;
+  width:365.5px;
+  text-align:center;
+  font-weight:500;
+  font-style:italic;
+}
+.form{
+  width:365.5px;
+}
+.content-input{
+  border:none;
+  padding:10px 40px;
+}
+.form__input{
+  display:inline-block;
+  height:50px;
+  line-height:50px;
+  border:none;  
+  outline:none;
+  color:#2f3542;
+  font-size:20px;
+  width:100%;
+  border-bottom:1px solid #a4b0be;
+  font:500 20px 'Lora', serif; 
+  font-style:italic;
+}
+.newsletter__img{
+  position:absolute;
+  top:0;
+  right:0;
+  height:500px;
+  width:711px;
+}
+/* ===========================
+    Social
+============================ */
+.icons-social{
+  padding:5px;
+}
+.list-social{
+  text-align:center;
+  padding:0;
+}
+.icons-social__item{
+  display:inline-block;
+}
+.icons-social__item:active{
+  transform:scale(1.1);
+}
+.icons-social__link{
+  font-size:23px;
+  color:#444442;
+  padding:10px;
+}
+.icons-social__link:hover{
+  color:#f4363b;
+}
+/* ===========================
+    Footer
+============================ */
+.footer{
+  padding:40px;
+  color:#444442;
+  text-align:center;
+  background:#0b0b0b;
+  margin:0;
+}
+.container-footer__link{
+  color:#444442;
+  text-decoration:none;
+}
+.container-footer__link:hover{
+  color:#f4363b;
+}
+/* ===========================
+    Media Queries
+============================ */
+@media (max-width: 2000px){
+  .container-1{
+    width:100%;
+    padding:0;
+    display:block;
+    min-height:0;
+  }
+  .container-1:after{
+    display:none;
+  }
+  .navbar{
+    width:100%;
+    display:block;
+    height:20px;
+    background:#161616;
+  }
+
+  .check-btn{
+    display:block;
+  }
+
+  #check:checked + .check-btn .check-top{
+    -webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    margin-top:20px;
+  }
+  #check:checked + .check-btn  .check-bottom{
+    opacity:0;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
+  #check:checked + .check-btn .check-meat{
+   -webkit-transform:rotate(45deg);
+   transform:rotate(45deg);
+   margin-top:-3.5px;
+  }
+  #check:checked ~ .nav-wrapper{
+    left:0;
+  }
+
+  .navbar__brand{
+    padding:0 30px;
+    margin-left:5px;
+    line-height:16px;
+  }
+
+  .nav-wrapper{
+    position:absolute;
+    width:100%;
+    background:#0b0b0b;
+    left:-100%;
+    text-align:center;
+    transition:all .5s;
+    top:60px;
+    height:60vh;
+    padding:0;
+    display:block;
+    z-index:2;
+  }
+
+  .nav-wrapper__item{
+    margin:30px 0;
+    line-height:30px;
+  }
+
+  .nav-wrapper__link{
+    color:#595959;
+  }
+  .masthead{
+    width:100%;
+    margin-top:80px;
+    text-align:center;
+  }
+
+  .masthead-text{
+    max-width:100%;
+    margin:0 65px;
+    text-align:center;
+  }
+
+  .masthead__title{
+    display:inline-block;
+    max-width:65%;
+  }
+
+  .masthead__paragraph{
+    margin-bottom:30px;
+  }
+
+  .masthead-img-1a{
+    display:none;
+  }
+
+  .masthead-img-1b{
+    display:block;
+  }
+
+  .content{
+    padding-top:20px;       
+    padding-bottom:25px;
+  }
+
+  .container-2{
+    display:block;
+  }
+  .col-left-1{
+    float:none;
+    width:100%;
+    height:260px;
+  }
+
+  .col-right-1{
+    width:100%;             
+    text-align:center;
+  }
+
+  .col-menu-1{
+    display:block;
+    height:100%;
+    margin-top:0px;
+  }
+
+  .container__img-3{
+    width:430px;
+    height:430px;
+    margin-right:0px;
+    margin-top:13px;
+    margin-bottom:33px;
+  }
+
+  .masthead__btn--menu{
+    margin-top:50px;
+  }
+  .subscribe{
+    height:100%;
+  }
+
+  .subscribe__h3{
+    width:100%;
+  }
+
+  .about__title--subscribe{
+    font-size:32px;
+  }
+
+  .form{
+    width:100%;
+  }
+
+  .content-input{
+    margin-bottom:50px;
+  }
+
+  .newsletter__img{
+    position:relative;
+    width:100%;
+    height:457px;
+    margin-top:50px;
+    margin-bottom:-4px;
+  }
+}
+@media (max-width: 700px){
+  .newsletter__img{
+    width:565px;
+    height:397px;
+  }
+}
+@media (max-width: 450px){
+  .navbar{
+    height:9px;
+  }
+
+  .check-btn{
+    right:20px;
+    top:63px;
+    margin-top:-50px;
+  }
+
+  .navbar__brand{
+    font-size:25px;
+    padding:0 15px;
+    margin-left:2.5px;
+    line-height:9px;
+  }
+
+  .nav-wrapper{
+    height:400px;
+    top:53px;
+  }
+  .nav-wrapper__item{
+    margin:15px 0;
+    line-height:15px;
+  }
+
+  .masthead{
+    margin-top:35px;
+  }
+
+  .masthead__title{
+    max-width:100%;
+    margin-bottom:30px;
+  }
+
+  .masthead__paragraph{
+    margin-top:0;
+  }
+  .masthead-img-1b{
+    width:300px;
+    height:300px;
+    margin-top:20px;
+  }
+
+  .container__img-1b{
+    width:100%;
+    height:100%;
+  }
+  .content{
+    padding-top:10px;       
+    padding-bottom:12.5px;
+  }
+  .content__title{
+    font-size:26px;
+    margin-top:35px;
+  }
+  .hr{
+    width:48px;
+    margin-bottom:50px; 
+  }
+  .col-left-1{
+    height:100%;
+  }
+  .about__title{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .col-right-1{
+    height:300px;
+    width:300px;
+  }
+
+  .container__img-2{
+    width:297px;;
+    height:297px;
+    margin:0 auto;
+  }
+
+  .container__img-3{
+    width:287px;
+    height:287px;
+    margin-top:8px;
+    margin-bottom:28px;
+  }
+
+  .masthead__btn--menu{
+    margin-top:24px;
+  }
+
+  .subscribe__h3{
+    margin:20px 0;
+  }
+  .about__title--subscribe{  
+    margin:45px 0;
+  }
+  .content-input{
+    margin-bottom:20px;
+  }
+  .form__input{
+    height:37px;
+    line-height:37px;
+    font-size:16px;
+  }
+  .newsletter__img{
+    width:100%;
+    height:211px;
+    margin-top:20px;
+  }
+
+  .footer{
+    padding:32px;
+  }
+  
+  .container-footer{
+    font-size:15px;
+  }
+}
+@media (max-height: 450px){
+  .nav-wrapper{
+    height:100vh;
+  }
+  
+  .nav-wrapper__item{
+    margin:15px 0;
+    line-height:15px;
+  }
+  
+.image-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+.image-container iframe, 
+.image-container object, 
+.image-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+}
+</style>
+  <body class="body">
+  
+  <!-- Navigation -->
+  
+    <section class="container-1"> 
+      <nav class="navbar">
+          <input type="checkbox" id="check"/>
+          <label for="check" class="check-btn">
+            <div class="check-item check-top"></div>
+            <div class="check-item check-meat"></div>
+            <div class="check-item check-bottom"></div>
+          </label> 
+          <label class="navbar__brand"><a class="navbar__brand-link" href="#">Insta CFO</a></label> 
+          <ul class="nav-wrapper">
+              <li class="nav-wrapper__item"><a class="nav-wrapper__link" href="#Home-section">Home</a></li>
+              <li class="nav-wrapper__item"><a class="nav-wrapper__link" href="#about-section">About</a></li>
+            <li class="nav-wrapper__item"><a class="nav-wrapper__link" href="#How it works-section">How It Works</a></li>
+               <li class="nav-wrapper__item"><a class="nav-wrapper__link" href="#Pricing-section">Pricing</a></li>
+               <li class="nav-wrapper__item"><a class="nav-wrapper__link" href="#Education-section">Education</a></li>
+               <li class="nav-wrapper__item"><a class="nav-wrapper__link" href="#Resources-section">Resources</a></li>
+               <li class="nav-wrapper__item"><a class="nav-wrapper__link" href="#Accountants-section">Accountants</a></li>
+             <li class="nav-wrapper__item"><a class="nav-wrapper__link" href="#Log in-section">Log in</a></li>  
+          </ul>    
+      </nav>
+  
+  <!-- Masthead -->
+  
+      <div class="masthead" id="home-section">
+          <div class="masthead-text">
+            <h1 class="masthead__title"> You run your business <span class="masthead__title-color">We'll do your book keeping!</span> <br></h1>
+          <p class="masthead__paragraph"> Get the statements and records you need for a loan-winning application. Then, we'll keep your bookkeeping and financials up to date – so you can apply for loan-forgiveness without the stress.
+From funding to forgiveness, a team of Insta CFO experts has you covered.
+         </p>
+          <label class="masthead__btn"><a class="masthead__link" href="#">Start a free trial</a></label>
+        </div>        
+        <div class="masthead-img-1a"> 
+          <img class="container__img-1a" src="https://www.zauca.com/wp-content/uploads/xWebsite-Designing--1024x682.jpg.pagespeed.ic.WwBAGQIflD.jpg">    
+        </div>
+      </div>
+      <div class="masthead-img-1b"> 
+        <img class="container__img-1b" src="https://www.zauca.com/wp-content/uploads/xWebsite-Designing--1024x682.jpg.pagespeed.ic.WwBAGQIflD.jpg">    
+      </div>
+    </section>
+  <!-- About -->
+    
+    <section class="about" id="about-section">
+      <div class="content">
+        <h2 class="content__title">About Us</h2>
+        <hr class="hr"/>
+      </div>
+      <div class="container-2">
+        <div class="col-left-1">
+          <h3 class="about__title">Our Story</h3>
+          <p class="about__paragraph">India’s largest professional bookkeeping service for small businesses
+"Bench was the missing piece of the puzzle. A reliable bookkeeper with a simple, elegant system, at a consistent monthly price."
+</p>    
+        </div>
+        <div class="col-right-1">
+          <img class="container__img-2" src="https://www.caservicesonline.com/images/top-section-banner.png"/>  
+        </div> 
+      </div>
+    </section>
+  
+  <!-- Home -->
+  
+    <section class="Home" id="Home-section">
+      <div class="content">
+        <h2 class="content__title">Home</h2>
+        <hr class="hr"/>
+        <h3 class="about__title">Insta CFO</h3>
+      </div>
+      <div class="container-2">
+        <div class="col-menu-1">
+          <img class="container__img-3" src="https://www.gema.it/wp-content/uploads/Cosa-studiare-per-diventare-CFO.jpg"/>
+          <p>No credit required!</p>
+          <img class="container__img-3" src="https://newdirectioncapital.com/wp-content/uploads/2018/08/How-Can-a-Fractional-CFO-Help-Your-Company-rawpixel-558596-unsplash-300x217.jpg"/>  
+          <p>Finance!</p>
+          
+          <hr>
+          
+          Online bookkeeping powered by real humans
+Get the benefits of a professional bookkeeper at a price you can afford, and powerful financial reporting software with zero learning curve.
+Start a Free Trial
+How our bookkeeping service works
+We get you set up
+First, we’ll introduce you to a dedicated bookkeeper. They’ll get to know your business, show you how Bench works, and gather everything they need from you.
+We do your bookkeeping
+Each month, your bookkeeper imports your business transactions and gets to work on your books. If they need anything from you, they’ll get in touch.
+We deliver intuitive financial reports
+Track business health with monthly reporting, and get the financials you need to apply for PPP loan forgiveness. At tax time, we send everything you need to file.
+Facing serious bookkeeping challenges?
+BenchRetro can help if you're dissolving your business, filing for bankruptcy, or in trouble with the IRS.
+Learn more about BenchRetro
+What you get with Bench
+EXPERT BOOKKEEPING
+Get one-on-one support when you need it
+Bench gives you a dedicated bookkeeper supported by a team of in-house experts. They’re here to take tedious financial admin and bookkeeping stress off your plate—for good.
+Learn how our experts handle your bookkeeping ➞
+Online bookkeeping powered by real humans
+Get the benefits of a professional bookkeeper at a price you can afford, and powerful financial reporting software with zero learning curve.
+Start a Free Trial
+How our bookkeeping service works
+We get you set up
+First, we’ll introduce you to a dedicated bookkeeper. They’ll get to know your business, show you how Bench works, and gather everything they need from you.
+We do your bookkeeping
+Each month, your bookkeeper imports your business transactions and gets to work on your books. If they need anything from you, they’ll get in touch.
+We deliver intuitive financial reports
+Track business health with monthly reporting, and get the financials you need to apply for PPP loan forgiveness. At tax time, we send everything you need to file.
+Facing serious bookkeeping challenges?
+BenchRetro can help if you're dissolving your business, filing for bankruptcy, or in trouble with the IRS.
+Learn more about BenchRetro
+What you get with Bench
+EXPERT BOOKKEEPING
+Get one-on-one support when you need it
+Bench gives you a dedicated bookkeeper supported by a team of in-house experts. They’re here to take tedious financial admin and bookkeeping stress off your plate—for good.
+Learn how our experts handle your bookkeeping ➞
+<strong>Why small business owners choose Bench</strong>
+Perfectly categorized and reconciled transactions come standard
+Business financials are always quality controlled and peer-reviewed
+We always respond to messages or calls in one business day or less
+          
+          <img class="container__img-3" src="https://www.healthcarefinancenews.com/sites/healthcarefinancenews.com/files/DataComputerGetty.jpg"/>   
+          <p><strong>Year end financial package</strong>
+For each client, we create a financial package containing the information that you need: comprehensive financial statements, notes of items that require special tax treatment, and transaction level backup.
+<strong>Here’s what’s included.</strong> 
+Income Statement
+Balance Sheet
+Trial Balance
+Journal Entry Summary
+General Ledger 
+For convenience, each Year End Financial Package is downloadable as an Excel file. To view a sample, book a call.
+Partner rewards for your tax practice
+Standard Bench pricing ranges from $139-$219 per month for clients under $50k in monthly ($600k annual) expenses.
+As a partner, select any one of three benefit packages most appropriate to each client. An additional 15% discount is available with any package when paid annually.
+</p> 
+        </div> 
+      </div>      
+      <label class="masthead__btn masthead__btn--menu"><a class="masthead__link masthead__link--menu" href="#">Sign up now !</a></label>
+    </section>
+    
+<section class="Pricing" id="Pricing-section">
+      <div class="content">
+        <h2 class="content__title">Pricing</h2>
+        <hr class="hr"/>
+      </div>
+      <div class="container-2">
+        <div class="col-left-1">
+          <h3 class="about__title">Pricing</h3>
+          <p class="about__paragraph">Tax season, minus the stress
+Tax bookkeeping and a year end package with everything you need to file comes standard with Bench. We’ll even work directly with your CPA.
+Or, cross more off your to-do list with BenchTax. With BenchTax, we connect you to a tax expert we trust. Then, they handle the tax prep and filing for you—from start to finish.
+</p>    
+        </div>
+        <div class="col-right-1">
+          <img class="container__img-2" src="https://www.wisdomjobs.com/tutorials/multiple-step-income-statement.png"/>  
+        </div> 
+      </div>
+    </section>
+    
+  <section class="How it works" id="How it works-section">
+      <div class="content">
+        <h2 class="content__title">How it works</h2>
+        <hr class="hr"/>
+      </div>
+      <div class="container-2">
+        <div class="col-left-1">
+          <h3 class="about__title">How it works</h3>
+          <p class="about__paragraph">How our bookkeeping service works:
+          <hr>
+We get you set up
+First, we’ll introduce you to a dedicated bookkeeper. They’ll get to know your business, show you how Bench works, and gather everything they need from you.
+We do your bookkeeping
+Each month, your bookkeeper imports your business transactions and gets to work on your books. If they need anything from you, they’ll get in touch.
+We deliver intuitive financial reports
+Track business health with monthly reporting, and get the financials you need to apply for PPP loan forgiveness. At tax time, we send everything you need to file.
+Facing serious bookkeeping challenges?
+BenchRetro can help if you're dissolving your business, filing for bankruptcy, or in trouble with the IRS.
+Learn more about BenchRetro
+</p>    
+        </div>
+        <div class="col-right-1">
+          <img class="container__img-2" src="https://www.caonweb.com/images/account.png"/>  
+        </div> 
+      </div>
+    </section>
+    
+    <section class="Education" id="Education-section">
+      <div class="content">
+        <h2 class="content__title">Education</h2>
+        <hr class="hr"/>
+      </div>
+      <div class="container-2">
+        <div class="col-left-1">
+          <h3 class="about__title">Education</h3>
+          <p class="about__paragraph">
+Want a free month of bookkeeping?
+Sign up for a trial of Bench. We’ll do one month of your bookkeeping and prepare a set of financial statements for you to keep. No pressure, no credit card required.
+<hr>
+               <label class="masthead__btn"><a class="masthead__link" href="#">Get started</a></label>
+</p>    
+        </div>
+        <div class="col-right-1">
+          <img class="container__img-2" src="https://www.paisabazaar.com/wp-content/uploads/2017/11/education-loan-debt.jpg"/>  
+        </div> 
+      </div>
+    </section>
+    
+     <section class="Resources" id="Resources-section">
+      <div class="content">
+        <h2 class="content__title">Resources</h2>
+        <hr class="hr"/>
+      </div>
+      <div class="container-2">
+        <div class="col-left-1">
+          <h3 class="about__title">Resources</h3>
+          <p class="about__paragraph">your text here
+</p>    
+        </div>
+        <div class="col-right-1">
+          <img class="container__img-2" src="https://www.caonweb.com/images/account.png"/>  
+        </div> 
+      </div>
+    </section>
+    
+     <section class="Accountants" 
+     id="Accountants-section">
+      <div class="content">
+        <h2 class="content__title">Accountants</h2>
+        <hr class="hr"/>
+      </div>
+      <div class="container-2">
+        <div class="col-left-1">
+          <h3 class="about__title">Accountants</h3>
+          <p class="about__paragraph">A partnership for the modern tax professional
+We do your clients’ books, you get financials that you can rely on. Partner with Bench - the affordable, professional bookkeeping solution for your small business clients.
+Why partner with Bench?
+No more clean up
+Save time, avoid headaches, and improve tax filing quality when you work with financials provided by Bench. We deliver accurate, standardized books that tie to prior year returns, capture your adjusting journal entries, and properly account for all tax relevant financial activity.
+Get what you need, when you need it
+Bench gives you direct access to the books and our in-house, professional bookkeepers. Give us your quarterly and annual deadlines and requirements, and we will work towards them with open communication.
+<strong>Keep growing</strong> 
+As a partner of Bench, earn revenue share and extend valuable discounts to your clients as they discover a bookkeeping solution tailored to their needs. The future is bright when you partner with Bench.
+     <strong>How we partner with you.   </strong>
+     
+1. Tell us your preferences
+Let your dedicated partner advisor know what your ideal client relationship is, and we will shape our services and communications to suit.
+2. Bring on your small business clients
+We will do a month of their bookkeeping for free. Our risk free trial gives full access to the Bench experience - no commitments required.
+3. We take care of the rest
+Option 1: We communicate directly with your clients
+We work with your clients directly to complete their books on a monthly basis. With direct access to Bench, you can pull financial reports and communicate directly with the bookkeeping team as desired.
+Option 2: We communicate directly with you
+We work with you directly to complete your clients' books while you maintain the communication with your clients.
+Note: Communication models are based on your preferences and can vary for each client
+
+</p>    
+        </div>
+        <div class="col-right-1">
+          <img class="container__img-2" src="https://assets.entrepreneur.com/content/3x2/2000/how-to-hire-an-accountant.jpg"/>  
+        </div> 
+      </div>
+    </section>
+    <hr>
+    
+    Join thousands of small business owners who trust Bench with their books
+See what running a business is like with Bench on your books. Try us for free—we’ll do one month of your bookkeeping and prepare a set of financial statements for you to keep.
+    
+  <!-- Contact -->
+  
+    <section class="newsletter" id="contact-section">
+      <div class="content content-newsletter">
+        <h2 class="content__title">Contact</h2>
+        <hr class="hr"/>
+      </div>     
+      <div class="subscribe">
+        <h3 class="subscribe__h3 about__title about__title--subscribe">
+        Sign Up For <br>Our Business
+        </h3>
+        <form class="form">
+          <fieldset class="content-input">
+            <input class="form__input" type="text" name="email" placeholder="Email Address"/>
+          </fieldset>
+          <label class="masthead__btn masthead__btn--menu"><a class="masthead__link masthead__link--menu" href="#"><small>&nbsp;</small> Register<small>&nbsp;</small></a></label>
+        </form>
+        <img class="newsletter__img" src="https://eduly.in/wp-content/uploads/2018/06/327653454049-compressed.jpg"/>
+      </div>
+    </section>
+  
+  <!-- Footer -->
+  
+    <footer class="footer">
+      <div class="icons-social">
+        <ul class="list-social">
+          <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-codepen"></i></a></li>              
+          <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-instagram"></i></a></li>
+          <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-facebook"></i></a></li>
+          <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-twitter"></i></a></li>
+          <li class="icons-social__item"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div class="container-footer">
+        <p>Developed by <a class="container-footer__link" href="https://codepen.io/Yulian_b/" target="_blank">shahla</a>
+      </div>
+    </footer> 
+  </body>
+</html>
